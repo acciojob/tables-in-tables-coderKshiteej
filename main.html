@@ -1,14 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Table</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <table style="width: 100%; height: 100%">
-      <!-- Your code here -->
-    </table>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Nested Table Layout</title>
+    <style>
+        /* CSS is included here for simplicity. 
+           In a real project, you'd put this in a separate file (style.css). */
+        .main-table {
+            width: 80%; /* Adjust as needed */
+            margin: 50px auto; /* Center the table */
+            border-collapse: collapse;
+            border: 4px solid black; /* Outer border */
+        }
+        
+        .main-table td {
+            width: 50%;
+            padding: 0;
+            border: 2px solid black; /* Separator borders */
+            vertical-align: top; /* Align content to the top of the cell */
+        }
+
+        /* Styling for the nested tables */
+        .nested-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .nested-table th, .nested-table td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        
+        .nested-table th {
+            background-color: #f2f2f2; /* Light background for headers */
+        }
+        
+        /* Specific styling for the list cell */
+        .list-cell ul {
+            list-style-type: disc;
+            text-align: left;
+            padding-left: 40px;
+            margin: 10px;
+        }
+
+        /* Styling for the bottom cells to match the example's text alignment */
+        .bottom-cell-content {
+            padding: 10px;
+        }
+        
+        .highlight {
+            color: purple;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<table class="main-table">
+    <tr>
+        <td>
+            <table class="nested-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Nested Table 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Column 1</td>
+                        <td>Column 2</td>
+                    </tr>
+                    <tr>
+                        <td>abc</td>
+                        <td>def</td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td class="list-cell">
+            <table class="nested-table">
+                <thead>
+                    <tr>
+                        <th>Nested Table 1</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>List item</li>
+                                <li>List item</li>
+                                <li>List item</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table class="nested-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Nested Table 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="width: 50%;"><span class="highlight">Nested Table</span></td>
+                        <td style="width: 50%;">Demo Continued</td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>
+            <table class="nested-table">
+                <thead>
+                    <tr>
+                        <th>Nested Table 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="bottom-cell-content">
+                                <strong>HTML</strong>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
 </html>
